@@ -33,9 +33,7 @@ class PhysicsEntity:
 
         self.pos[1] += frame_movement[1]
         entity_rect = self.rect()
-        pygame.draw.rect(self.game.display, (255, 0, 0), entity_rect)
         for rect in tilemap.physics_rects_around(self.pos):
-            pygame.draw.rect(self.game.display, (255, 255, 255), rect)
 
             if entity_rect.colliderect(rect):
                 if frame_movement[1] > 0:
