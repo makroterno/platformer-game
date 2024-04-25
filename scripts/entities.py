@@ -20,7 +20,6 @@ class PhysicsEntity:
         return pygame.Rect(self.pos[0], self.pos[1], self.size[0], self.size[1])
 
     def set_action(self, action):
-        print(action)
         if action != self.action:
             self.action = action
             self.animation = self.game.assets[self.type + '/' + self.action].copy()
@@ -80,7 +79,6 @@ class Player(PhysicsEntity):
     def update(self, tilemap, movement=(0, 0)):
         super().update(tilemap, movement=movement)
         self.air_time += 1
-        print(self.air_time)
         if self.collisions['down']:
             self.air_time = 0
 
